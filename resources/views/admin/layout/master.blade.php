@@ -118,28 +118,33 @@
             <div class="w-1/6 relative sm_hidden sidebar_main_width">
                 <div class="absolute inset-0 w-full hh-full sidebar_main overflow-y-auto">
                     <ul class="mt-5 px-5">
+
                         <li
                             class="{{ Route::is('admin.transaction') || Route::is('transaction.add') ? 'text-blue-600' : 'text-white' }} py-1 nav_item_li cursor-pointer">
                             <span class="w-10 inline-block"><i style=" " class="fas fa-dollar-sign mr-2"></i></span><a
                                 class="" style="
                                 " href="{{ route('admin.transaction') }}">Transection</a>
                         </li>
+
                         <li
                             class="{{ Route::is('admin.report') ? 'text-blue-700' : 'text-white' }} text-white py-1 nav_item_li cursor-pointer">
                             <span class="w-10 inline-block"><i style="" class="fas fa-chart-pie mr-2"></i></span><a
                                 class="" style="" href="{{ route('admin.report') }}">Report</a>
                         </li>
-                        <li
-                            class="{{ Route::is('admin.particular') ? 'text-blue-700' : 'text-white' }} text-white py-1 nav_item_li cursor-pointer">
-                            <span class="w-10 inline-block"><i style="" class="fas fa-clone mr-2"></i></span><a
-                                class="" style=""
-                                href="{{ Route('admin.particular') }}">Particular's</a>
-                        </li>
-                        <li class=" text-white py-1 nav_item_li cursor-pointer">
-                            <span class="w-10 inline-block"><i style="" class="fas fa-users mr-2"></i></span><a
-                                class="" style="" href="{{ route('admin.user') }}">User's</a>
-                        </li>
-
+                        @can('admin')
+                            <li
+                                class="{{ Route::is('admin.particular') ? 'text-blue-700' : 'text-white' }} text-white py-1 nav_item_li cursor-pointer">
+                                <span class="w-10 inline-block"><i style="" class="fas fa-clone mr-2"></i></span><a
+                                    class="" style=""
+                                    href="{{ Route('admin.particular') }}">Particular's</a>
+                            </li>
+                        @endcan
+                        @can('admin')
+                            <li class=" text-white py-1 nav_item_li cursor-pointer">
+                                <span class="w-10 inline-block"><i style="" class="fas fa-users mr-2"></i></span><a
+                                    class="" style="" href="{{ route('admin.user') }}">User's</a>
+                            </li>
+                        @endcan
                     </ul>
                 </div>
             </div>

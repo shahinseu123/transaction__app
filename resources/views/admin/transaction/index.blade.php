@@ -9,9 +9,11 @@
         <div class="p-4 shadow-lg rounded-lg">
             <div class="flex justify-between text-white border-b-2 border_secondary pb-4 mb-4">
                 <h1 class="text-3xl font-semibold text-gray-600">Transection</h1>
-                <a href="{{ route('transaction.add') }}"
-                    class="uppercase px-4 py-1 btn_secondary rounded shadow-lg font-semibold"><i class="fas fa-plus "></i>
-                    Add Transection</a>
+                @can('admin')
+                    <a href="{{ route('transaction.add') }}"
+                        class="uppercase px-4 py-1 btn_secondary rounded shadow-lg font-semibold"><i class="fas fa-plus "></i>
+                        Add Transection</a>
+                @endcan
             </div>
             <table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
                 <thead>
