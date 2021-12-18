@@ -6,6 +6,7 @@ use App\Http\Controllers\back\DashboardController;
 use App\Http\Controllers\back\ParticularController;
 use App\Http\Controllers\back\ReportController;
 use App\Http\Controllers\back\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,4 +41,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/users/delete/{id}', [UserController::class, 'delete_user'])->name('user.delete');
     Route::get('/users/make/admin/{id}', [UserController::class, 'make_admin'])->name('user.make.admin');
     Route::get('/users/make/user/{id}', [UserController::class, 'make_user'])->name('user.make.user');
+    Route::get('/user/logout', [UserController::class, 'logout'])->name('admin.logout');
 });

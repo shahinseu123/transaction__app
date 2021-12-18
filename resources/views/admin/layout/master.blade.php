@@ -145,6 +145,11 @@
                                     class="" style="" href="{{ route('admin.user') }}">User's</a>
                             </li>
                         @endcan
+                        <li class=" text-white py-1 nav_item_li cursor-pointer">
+                            <span class="w-10 inline-block"><i style=""
+                                    class="fas text-red-500 fa-cog mr-2"></i></span><a class="" style=""
+                                href="{{ route('admin.logout') }}">Logout</a>
+                        </li>
                     </ul>
                 </div>
             </div>

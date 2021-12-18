@@ -5,6 +5,7 @@ namespace App\Http\Controllers\back;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -33,5 +34,11 @@ class UserController extends Controller
         $user->role = 'user';
         $user->save();
         return redirect()->back();
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }
